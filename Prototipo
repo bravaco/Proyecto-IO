@@ -93,10 +93,10 @@ namespace pro_io
                 while (opcion != 0)
                 {
                     Console.WriteLine("Menu:");
-                    Console.WriteLine("0: Salir");
-                    Console.WriteLine("1: Ver Ranking de Canciones");
-                    Console.WriteLine("2: Añadir cancion");
-                    Console.WriteLine("3: Eliminar Cancion");
+                    Console.WriteLine("0: Ver Ranking de Canciones");
+                    Console.WriteLine("1: Añadir cancion");
+                    Console.WriteLine("2: Eliminar Cancion");
+                    Console.WriteLine("3: Salir");
                     
               
 
