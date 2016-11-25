@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.IO;
 using System.Media;
+using WMPLib;
 namespace pro_io
 {
     class Program
@@ -31,20 +32,29 @@ namespace pro_io
             SoundPlayer simpleSound = new SoundPlayer(@"vivaldiconcertomandolin.wav");
             simpleSound.Play();
         }
+
+        public void 
+        {
+            WindowsMediaPlayer wplayer = new WindowsMediaPlayer();
+            wplayer.URL = " "
+            wplayer.controls.play();
+
+        }
+  
         static int Cargar(ListaCanciones lista)
         {
             try
             {
                 StreamReader F = new StreamReader("Canciones.txt");
                 int i = 0;
-                lista.num=Convert.ToInt32(Console.ReadLine());
-                
-                while (i< lista.num)
+                lista.num = Convert.ToInt32(Console.ReadLine());
+
+                while (i < lista.num)
                 {
-                    
+
                     Cancion u = new Cancion();
                     string linea = F.ReadLine();
-                    string[] trozos = linea.Split(' ');
+                    string[] trozos = linea.Split(' ');e
                     u.nombre = trozos[0];
                     u.artista = trozos[1];
                     u.genero = trozos[2];
@@ -56,12 +66,12 @@ namespace pro_io
                 return 0;
 
             }
-            catch(FileNotFoundException)
+            catch (FileNotFoundException)
             {
                 return -1;
-                
+
             }
-            catch(FormatException)
+            catch (FormatException)
             {
                 return -2;
             }
@@ -79,7 +89,7 @@ namespace pro_io
 
         }
 
-        
+
         static void Main(string[] args)
         {
             int x;
@@ -97,12 +107,12 @@ namespace pro_io
                     Console.WriteLine("1: Añadir cancion");
                     Console.WriteLine("2: Eliminar Cancion");
                     Console.WriteLine("3: Salir");
-                    
-              
+
+
 
                 }
 
-            }                 
+            }
 
         }
     }
