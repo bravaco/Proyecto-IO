@@ -102,17 +102,7 @@ namespace pro_io
 
                 }
 
-
-
-
-            }
-
-            Console.WriteLine("Menu:");
-            Console.WriteLine("1.Ver Lista de Canciones");
-            Console.WriteLine("2.Añadir Cancion");
-            x = Convert.ToInt32(Console.ReadLine());
-            Console.ReadLine();
-                       
+            }                 
 
         }
     }
