@@ -1,1 +1,119 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.IO;
+using System.Media;
+namespace pro_io
+{
+    class Program
+    {
+        class CDate
+        {
+            public int dia;
+            public int mes;
+            public int año;
+        }
+        class Cancion
+        {
+            public string nombre;
+            public string artista;
+            public string genero;
+        }
+        class ListaCanciones
+        {
+            public Cancion[] Canciones = new Cancion[100];
+            public int num = 0;
+        }
 
+        public void playSimpleSound()
+        {
+            SoundPlayer simpleSound = new SoundPlayer(@"vivaldiconcertomandolin.wav");
+            simpleSound.Play();
+        }
+        static int Cargar(ListaCanciones lista)
+        {
+            try
+            {
+                StreamReader F = new StreamReader("Canciones.txt");
+                int i = 0;
+                lista.num=Convert.ToInt32(Console.ReadLine());
+                
+                while (i< lista.num)
+                {
+                    
+                    Cancion u = new Cancion();
+                    string linea = F.ReadLine();
+                    string[] trozos = linea.Split(' ');
+                    u.nombre = trozos[0];
+                    u.artista = trozos[1];
+                    u.genero = trozos[2];
+                    lista.Canciones[i] = u;
+                    i++;
+
+                }
+                F.Close();
+                return 0;
+
+            }
+            catch(FileNotFoundException)
+            {
+                return -1;
+                
+            }
+            catch(FormatException)
+            {
+                return -2;
+            }
+        }
+
+        static int PonCancion(ListaCanciones lista, Cancion u)
+        {
+            if (lista.num < 100)
+            {
+                lista.Canciones[lista.num] = u;
+                lista.num++;
+                return 0;
+            }
+            else return -1;
+
+        }
+
+        
+        static void Main(string[] args)
+        {
+            int x;
+            ListaCanciones miLista = new ListaCanciones();
+            int res = Cargar(miLista);
+            if (res == -1) Console.WriteLine("Error Fichero no encontrado");
+            else if (res == -2) Console.WriteLine("Error de Formato");
+            else
+            {
+                int opcion = 2;
+                while (opcion != 0)
+                {
+                    Console.WriteLine("Menu:");
+                    Console.WriteLine("0: Salir");
+                    Console.WriteLine("1: Ver Ranking de Canciones");
+                    Console.WriteLine("2: Añadir cancion");
+                    Console.WriteLine("3: Eliminar Cancion");
+                    
+              
+
+                }
+
+
+
+
+            }
+
+            Console.WriteLine("Menu:");
+            Console.WriteLine("1.Ver Lista de Canciones");
+            Console.WriteLine("2.Añadir Cancion");
+            x = Convert.ToInt32(Console.ReadLine());
+            Console.ReadLine();
+                       
+
+        }
+    }
+}
