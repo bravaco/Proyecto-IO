@@ -100,14 +100,27 @@ namespace pro_io
             else
             {
                 int opcion = 2;
-                while (opcion != 0)
+                while (opcion != 3)
                 {
                     Console.WriteLine("Menu:");
                     Console.WriteLine("0: Ver Ranking de Canciones");
                     Console.WriteLine("1: Añadir cancion");
                     Console.WriteLine("2: Eliminar Cancion");
                     Console.WriteLine("3: Salir");
-
+                    int opcion = Conver.To.Int32(Console.ReadLine());
+                    
+                    switch (opcion)
+                    {
+                        case 0: 
+                        
+                        case 1:
+                        
+                        case 2:
+                        
+                        case 3: break;
+                        
+                        default: Console.WriteLine("La opción elegida no aparece en el menú");
+                            break;
 
 
                 }
